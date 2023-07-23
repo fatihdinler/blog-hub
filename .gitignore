@@ -1,0 +1,19 @@
+# base
+.vscode
+
+# mobile
+.expo
+client/mobile/node_modules
+client/mobile/.env
+
+# web
+client/web/node_modules
+client/web/package-lock.json
+client/web/yarn.lock
+client/web/.env
+
+# server
+server/node_modules
+server/yarn.lock
+server/package-lock.json
+server/.env
