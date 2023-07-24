@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { LoginAsset } from '../../shared/assets'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
-
-  console.log(email, password)
 
   return (
     <div className='flex flex-col md:flex-row h-screen'>
@@ -68,7 +67,11 @@ const Login = () => {
           </div>
           <div className='flex flex-row mb-6'>
             <p className='font-Poppins font-extralight text-gray-700'>Are you new in Shopper?</p>
-            <p className='ml-1 text-blue-400 font-Poppins'>Come & Join to us.</p>
+            <p className='ml-1 text-blue-400 font-Poppins'>
+              <Link to='/register'>
+                Come & Join to us.
+              </Link>
+            </p>
           </div>
         </form>
       </div>
