@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { RxAvatar } from 'react-icons/rx'
+import { useCreateUserMutation } from '../../redux/api'
 
 const Register = () => {
   const [fullName, setFullName] = useState('')
@@ -9,15 +10,14 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [avatar, setAvatar] = useState('')
 
-  const handleSubmit = () => {
-    // Sends data to backend.
-    console.log('fff')
-  }
-
   const handleFileInputChange = (event) => {
     // Use it when the user going to change their avatar.
     const file = event.target.files[0]
     setAvatar(file)
+  }
+
+  const handleRegister = () => {
+    // Sends data to backend.
   }
 
   return (
@@ -136,7 +136,7 @@ const Register = () => {
             <button
               type='submit'
               className='w-full py-2 px-4 bg-blue-400 hover:bg-white hover:text-blue-400 hover:border-blue-400 hover:border-2 text-white font-medium rounded focus:outline-none transition-colors duration-300 font-Poppins'
-              onClick={handleSubmit}
+              onClick={handleRegister}
             >
               Register
             </button>
