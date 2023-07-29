@@ -1,1 +1,0 @@
-export { default as LoginAsset } from './pictures/login-picture.jpeg'
