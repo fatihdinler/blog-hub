@@ -3,6 +3,8 @@ import { Heading, Text, useToast } from '@chakra-ui/react'
 import { Input, CheckboxInput, Button } from '../../components'
 import styles from '../../shared/styles/styles'
 import { Link } from 'react-router-dom'
+import { usePostRequest } from '../../shared/utils'
+import { API } from '../../shared/constants/api'
 
 const Register = () => {
 	const [fullName, setFullName] = useState('')
@@ -11,6 +13,8 @@ const Register = () => {
 	const [avatar, setAvatar] = useState(null)
 	const [showPassword, setShowPassword] = useState(false)
 	const [rememberMe, setRememberMe] = useState(false)
+
+	const { response: postData, isLoading: isPostDataLoading, error: postError, postRequest } = usePostRequest()
 
 	const toast = useToast()
 
@@ -22,7 +26,8 @@ const Register = () => {
 		setAvatar(selectedAvatar)
 	}
 
-	const registerHandler = () => {
+	const registerHandler = async (e) => {
+		e.preventDefault()
 		if (!fullName || !emailAddress || !userPassword || !avatar) {
 			toast({
 				title: 'You have to fill out all the fields!',
@@ -31,7 +36,20 @@ const Register = () => {
 				position: 'top-right'
 			})
 		} else {
-			// Handle registration logic including avatar
+			const newForm = new FormData()
+			newForm.append('file', avatar)
+			newForm.append('name', fullName)
+			newForm.append('email', emailAddress)
+			newForm.append('password', userPassword)
+
+			const config = {
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			}
+			await postRequest(API.USER.CREATE_USER, newForm, config)
+			console.log(postData)
+
 			toast({
 				title: 'Registration is successful!',
 				status: 'success',
@@ -108,11 +126,11 @@ const Register = () => {
 							</label>
 							<div className='mt-1'>
 								<Input
-                  type='file'
-                  id='avatar'
-                  name='avatar'
-                  accept='image/*'
-                  onChange={handleAvatarChange}
+									type='file'
+									id='avatar'
+									name='avatar'
+									accept='image/*'
+									onChange={handleAvatarChange}
 								/>
 							</div>
 						</div>
