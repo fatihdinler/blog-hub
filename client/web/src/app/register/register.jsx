@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Heading, Text, useToast } from '@chakra-ui/react'
 import { Input, CheckboxInput, Button } from '../../components'
 import styles from '../../shared/styles/styles'
@@ -14,8 +14,7 @@ const Register = () => {
 	const [showPassword, setShowPassword] = useState(false)
 	const [rememberMe, setRememberMe] = useState(false)
 
-	const { response: postData, isLoading: isPostDataLoading, error: postError, postRequest } = usePostRequest()
-
+	const { response: registerData, isLoading: isRegisterLoading, error: registerError, postRequest } = usePostRequest()
 	const toast = useToast()
 
 	const toggleShowPasswordHandler = () => setShowPassword(!showPassword)
@@ -47,15 +46,18 @@ const Register = () => {
 					'Content-Type': 'multipart/form-data'
 				}
 			}
-			await postRequest(API.USER.CREATE_USER, newForm, config)
-			console.log(postData)
 
-			toast({
-				title: 'Registration is successful!',
-				status: 'success',
-				isClosable: true,
-				position: 'top-right'
-			})
+			await postRequest(API.USER.CREATE_USER, newForm, config)
+
+
+			// if (registerData && !isRegisterLoading && !registerError) {
+			// 	toast({
+			// 		title: 'Registration is successful!',
+			// 		status: 'success',
+			// 		isClosable: true,
+			// 		position: 'top-right'
+			// 	})
+			// }
 		}
 	}
 
@@ -152,6 +154,7 @@ const Register = () => {
 								className='group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent'
 								content='Register'
 								onClick={registerHandler}
+								isLoading={isRegisterLoading}
 							/>
 						</div>
 						<div className={`${styles.normalFlex} w-full`}>
