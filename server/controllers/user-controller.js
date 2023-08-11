@@ -3,7 +3,7 @@ const path = require('path')
 const { upload } = require('../multer')
 const User = require('../models/user-model')
 const ErrorHandler = require('../utils/error-handler')
-
+const fs = require('fs')
 const router = express.Router()
 
 router.post('/create-user', upload.single('file'), async (req, res, next) => {
@@ -12,6 +12,16 @@ router.post('/create-user', upload.single('file'), async (req, res, next) => {
 	const userEmail = await User.findOne({ email })
 
 	if (userEmail) {
+		const filename = req.file.filename
+		const filePath = `uploads/${filename}`
+		fs.unlink(filePath, (error) => {
+			if (error) {
+				console.log(`Error at /create-user controller -> ${error}`)
+				res.status(500).json({message: 'Error deleting file'})
+			} else {
+				res.json({message: 'File deleted successfully! '})
+			}
+		})
 		return next(new ErrorHandler(`${userEmail} user already exists`, 400))
 	}
 

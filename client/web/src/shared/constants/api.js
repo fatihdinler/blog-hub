@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.0.78:8000/api/v2'
+const BASE_URL = 'http://192.168.1.105:8000/api/v2'
 
 export const API = {
     USER: {
