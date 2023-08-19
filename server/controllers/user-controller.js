@@ -31,14 +31,13 @@ const loginUser = asyncHandler(async (req, res) => {
       // Send the token
       res.status(200).json({
         success: true,
-        user: {
-          id: findUser?._id,
-          firstname: findUser?.firstname,
-          lastname: findUser?.lastname,
-          email: findUser?.email,
-          mobile: findUser?.mobile,
-          token: generateToken(findUser?._id)
-        },
+
+        id: findUser?._id,
+        firstname: findUser?.firstname,
+        lastname: findUser?.lastname,
+        email: findUser?.email,
+        mobile: findUser?.mobile,
+        token: generateToken(findUser?._id),
         statusCode: 200
       })
     } else {
@@ -105,5 +104,26 @@ const deleteUser = asyncHandler(async (req, res) => {
   }
 })
 
+const updateUser = asyncHandler(async (req, res) => {
+  const { id } = req.params
+  try {
+    const { firstname, lastname, email, mobile } = req.body
+    const user = await User.findByIdAndUpdate(id, {
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      mobile: mobile,
+    }, { new: true })
+    if (user) {
+      res.status(200).json({ success: true, message: 'User is updated successfully', user })
+    }
+    else {
+      res.status(404).json({ success: false, message: 'User not found' })
+    }
+  } catch (error) {
+    throw new Error(error)
+  }
+})
 
-module.exports = { createUser, loginUser, getUsers, getUser, deleteUser }
+
+module.exports = { createUser, loginUser, getUsers, getUser, deleteUser, updateUser }
