@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema({
 		type: Array,
 		default: []
 	},
+	isBlocked: {
+		type: Boolean,
+		default: false
+	},
 	address: [{
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Address'
