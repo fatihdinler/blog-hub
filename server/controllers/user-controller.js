@@ -1,5 +1,6 @@
 const User = require('../models/user-model')
 const asyncHandler = require('express-async-handler')
+const jwt = require('jsonwebtoken')
 const { generateToken } = require('../config/jwt')
 const { generateRefreshToken } = require('../config/refresh-token')
 const validateMongoDBId = require('../utils/validate-mongodb-id')
@@ -58,14 +59,30 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 })
 
-const handleRefreshToken = asyncHandler(async (req, res) => {
-  const { refreshToken } = req.cookies
-  if (!refreshToken) {
-    throw new Error('There is no refresh token in cookies !')
+const logoutUser = asyncHandler(async (req, res) => {
+  const cookie = req.cookies
+  if (!cookie.refreshToken) {
+    throw new Error('There is no refresh token in cookies')
   }
-  
-
+  const refreshToken = cookie.refreshToken
+  const user = await User.findOne({ refreshToken })
+  if (!user) {
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: true
+    })
+    return res.sendStatus(204)
+  }
+  await User.findOneAndUpdate({ refreshToken }, {
+    refreshToken: ''
+  })
+  res.clearCookie('refreshToken', {
+    httpOnly: true,
+    secure: true
+  })
+  res.sendStatus(201)
 })
+
 
 const getUsers = asyncHandler(async (req, res) => {
   try {
@@ -169,6 +186,30 @@ const unBlockUser = asyncHandler(async (req, res) => {
   }
 })
 
+const handleRefreshToken = asyncHandler(async (req, res) => {
+  const { refreshToken } = req.cookies
+  if (!refreshToken) {
+    throw new Error('There is no refresh token in cookies !')
+  }
+  const relatedUser = await User.findOne({ refreshToken: refreshToken })
+  if (!relatedUser) {
+    throw new Error('There is no refresh token presented in the database for this user')
+  }
+  jwt.verify(
+    refreshToken,
+    process.env.JWT_SECRET, 
+    (err, decoded) => {
+      if (err || relatedUser._id !== decoded.id) {
+        throw new Error('Something went wrong with refresh token')
+      }
+      else {
+        const accessToken = generateToken(relatedUser?._id)
+        res.status(200).json({ success: true, user: relatedUser, accessToken }) // Yanıtı burada gönder
+      }
+    }
+  )
+})
+
 
 module.exports = { 
   createUser, 
@@ -180,4 +221,5 @@ module.exports = {
   blockUser, 
   unBlockUser,
   handleRefreshToken,
+  logoutUser
 }
