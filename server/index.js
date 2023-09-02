@@ -9,6 +9,7 @@ const { errorHandler, notFound } = require('./middlewares/error-handler')
 const PORT = process.env.PORT || 4000
 const authRouter = require('./routes/auth-route')
 const productRouter = require('./routes/product-route')
+const blogRouter = require('./routes/blog-route')
 
 dbConnect()
 
@@ -19,6 +20,7 @@ app.use(cookieParser())
 
 app.use('/api/user', authRouter)
 app.use('/api/product', productRouter)
+app.use('/api/blog', blogRouter)
 
 // Use error-handler middlewares after the routes
 app.use(notFound)

@@ -67,7 +67,6 @@ const getProducts = asyncHandler(async (req, res) => {
         throw new Error('This page does not exists !')
       }
     }
-    console.log(`page -> ${page}, limit -> ${limit}, skip -> ${skip}`)
 
     const products = await query
 
