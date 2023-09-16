@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Menu } from '../../app'
 import routes from '../../routes'
+import '../../shared/style/layout.css'
 
 const Layout = () => {
   return (
