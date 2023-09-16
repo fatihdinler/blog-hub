@@ -1,0 +1,9 @@
+.header-top-strip {
+  border-bottom: 1px solid var(--color-gray);
+  background-color: var(--color-black);
+}
+
+.header-upper {
+  background-color: var(--color-black);
+}
+
