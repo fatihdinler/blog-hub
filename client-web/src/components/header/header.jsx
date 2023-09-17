@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Text, Heading, Input, InputLeftElement, InputGroup } from '@chakra-ui/react'
+import { Text, Heading, Input, InputRightElement, InputGroup, Image } from '@chakra-ui/react'
 import { BsSearch } from 'react-icons/bs'
 
 const Header = () => {
@@ -16,32 +16,78 @@ const Header = () => {
             </div>
             <div className='col-6'>
               <Text className='text-end text-white mb-0'>
-                Hotline: <a className='text-white' href='tel:+90 546 881 24 26'>(+90) 546 881 24 26</a>
+                Hotline: <a className='text-white' href='tel:+90 546 881 24 26'>(+90) 538 853 38 95</a>
               </Text>
             </div>
           </div>
         </div>
       </header>
-      <div className='header header-upper py-3'>
+      <div className='header-upper py-3'>
         <div className='container-xxl'>
-          <div className='row'>
+          <div className='row align-items-center py-1'>
             <div className='col-2'>
               <Heading as='h2' size='xl' className='text-white'>
                 <Link>DigiShop</Link>
               </Heading>
             </div>
             <div className='col-5'>
-              <InputGroup>
-                <InputLeftElement pointerEvents='none'>
+              <InputGroup className='input-group'>
+                <Input
+                  type='tel'
+                  className='bg-white py-2'
+                  placeholder='Search Product'
+                  size='md'
+                />
+                <InputRightElement pointerEvents='none' className='input-group-text'>
                   <BsSearch color='gray.300' />
-                </InputLeftElement>
-                <Input type='tel' className='bg-white' placeholder='Search Product' />
+                </InputRightElement>
               </InputGroup>
             </div>
-            <div className='col-5'>
-
+            <div className='col-5 align-items-center'>
+              <div className='header-upper-links d-flex align-items-center justify-content-between'>
+                <div>
+                  <Link className='d-flex align-items-center gap-10'>
+                    <Image src='images/compare.svg' alt='compare' />
+                    <Text className='text-white mb-0' fontSize='small'>
+                      Compare
+                      <br />
+                      Products
+                    </Text>
+                  </Link>
+                </div>
+                <div>
+                  <Link className='d-flex align-items-center gap-10'>
+                    <Image src='images/wishlist.svg' alt='wishlist' />
+                    <Text className='text-white mb-0' fontSize='small'>
+                      Favourite
+                      <br />
+                      Wishlist
+                    </Text>
+                  </Link>
+                </div>
+                <div>
+                  <Link className='d-flex align-items-center gap-10'>
+                    <Image src='images/user.svg' alt='user' />
+                    <Text className='text-white mb-0' fontSize='small'>
+                      Login
+                      <br />
+                      My Account
+                    </Text>
+                  </Link>
+                </div>
+                <div>
+                  <Link className='d-flex align-items-center gap-10'>
+                    <Image src='images/cart.svg' alt='cart' />
+                    <div className='d-flex flex-column gap-1'>
+                      <span className='badge bg-white text-dark '>
+                        0
+                      </span>
+                      <Text className='text-white mb-0 '>$ 500</Text>
+                    </div>
+                  </Link>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
       </div>

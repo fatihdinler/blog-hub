@@ -7,6 +7,7 @@
 :root {
   --color-black: #131921;
   --color-gray: #3B4149;
+  --color-orange: #FEBD69;
 }
 
 body {
@@ -16,6 +17,14 @@ body {
 a {
   text-decoration: none;
   display: inline-block;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15 {
+  gap: 15px;
 }
 
 @import url(header.css);
