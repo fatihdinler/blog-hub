@@ -1,0 +1,27 @@
+.main-banner {
+
+}
+
+.main-banner-content {
+  top: 15%;
+  left: 5%;
+}
+
+.main-banner-content h4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #BF4800;
+  margin: 0 0 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.main-banner-content h5 {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 64px;
+  margin: 0 0 12px;
+  letter-spacing: -2px;
+  text-transform: none;
+}
