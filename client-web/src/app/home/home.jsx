@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, Text, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import { FastMarquee } from '../../components'
 
 const Home = () => {
   return (
@@ -157,7 +158,7 @@ const Home = () => {
           <div className='row'>
             <div className='col-12'>
               <div className='categories d-flex flex-wrap justify-content-between align-items-center rounded-5'>
-                
+
                 <div className='d-flex gap-30 align-items-center '>
                   <div>
                     <Text as='h6'>Music & Gaming</Text>
@@ -226,6 +227,20 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className='marquee-wrapper py-5'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='marquee-inner-wrapper card-wrapper bg-white p-3 rounded-5'>
+                <FastMarquee />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
     </div>
   )
 }
