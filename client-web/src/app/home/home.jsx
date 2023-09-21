@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Text, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { FastMarquee, BlogCard } from '../../components'
+import { FastMarquee, BlogCard, ProductCard } from '../../components'
 
 const Home = () => {
   return (
@@ -245,6 +245,22 @@ const Home = () => {
           <div className='row'>
             <div className='col-12 section-heading'>
               <Text as='h3'>
+                Featured Collections
+              </Text>
+            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
+
+      <section className='blog-wrapper home-wrapper-secondary py-5 '>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12 section-heading'>
+              <Text as='h3'>
                 Our Latest Blogs
               </Text>
             </div>
@@ -256,7 +272,7 @@ const Home = () => {
         </div>
       </section>
 
-      
+
     </div>
   )
 }

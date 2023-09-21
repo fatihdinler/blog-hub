@@ -12,6 +12,8 @@
   --color-f5f5f7: #f5f5f7;
   --color-white-divider: #ededed;
   --color-777777: #777777;
+  --color-bf4800: #bf4800;
+  --color-1c1c1b: #1c1c1b;
 }
 
 .card-wrapper {
@@ -52,3 +54,4 @@ a {
 @import url(footer.css);
 @import url(home.css);
 @import url(blog-card.css);
+@import url(product-card.css);
