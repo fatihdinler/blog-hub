@@ -29,6 +29,26 @@ client-web/yarn-debug.log*
 client-web/yarn-error.log*
 client-web/dist
 
+# client-web-v2
+client-web-v2/node_modules
+client-web-v2/package-lock.json
+client-web-v2/yarn.lock
+client-web-v2/.env
+client-web-v2/node_modules
+client-web-v2/.pnp
+client-web-v2/.pnp.js
+client-web-v2/coverage
+client-web-v2/build
+client-web-v2/.DS_Store
+client-web-v2/.env.local
+client-web-v2/.env.development.local
+client-web-v2/.env.test.local
+client-web-v2/.env.production.local
+client-web-v2/npm-debug.log*
+client-web-v2/yarn-debug.log*
+client-web-v2/yarn-error.log*
+client-web-v2/dist
+
 # server
 server/node_modules
 server/yarn.lock

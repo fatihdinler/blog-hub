@@ -46,7 +46,6 @@ const SpecialProductCard = () => {
             <div className='product-count mt-3'>
               <Text>Products: 4</Text>
               <Progress
-                
                 value={64}
                 colorScheme='teal'
                 size='sm'
