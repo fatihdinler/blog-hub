@@ -1,6 +1,7 @@
 # base
 .vscode
 .todo
+.DS_Store
 
 #mobile
 client/mobile/.expo
