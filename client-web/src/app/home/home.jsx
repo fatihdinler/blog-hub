@@ -244,6 +244,72 @@ const Home = () => {
         </div>
       </section>
 
+      <section className='famous-wrapper home-wrapper-secondary py-5'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-3'>
+              <div className='famous-card rounded-5'>
+                <div className='famous-content '>
+                  <Text as='h5'>Big Screen</Text>
+                  <Text as='h6'>Smart Watch Series 7</Text>
+                  <Text as='p'>From $399 or $16.62/month for 24 month *</Text>
+                </div>
+                <Image
+                  src='images/watch-01.jpeg'
+                  alt='famous'
+                  className='rounded-5'
+                />
+              </div>
+            </div>
+
+            <div className='col-3'>
+              <div className='famous-card rounded-5'>
+                <div className='famous-content '>
+                  <Text as='h5'>Studio Displays</Text>
+                  <Text as='h6'>600 nits of brightness</Text>
+                  <Text as='p'>27-inch 5K Retina display with unbelievable light force</Text>
+                </div>
+                <Image
+                  src='images/watch-01.jpeg'
+                  alt='famous'
+                  className='rounded-5'
+                />
+              </div>
+            </div>
+
+            <div className='col-3'>
+              <div className='famous-card rounded-5'>
+                <div className='famous-content '>
+                  <Text as='h5'>Smartphones</Text>
+                  <Text as='h6'>Smartphone 13 Pro</Text>
+                  <Text as='p'>Now in Green, From $399 or $16.62/month for 24 month *</Text>
+                </div>
+                <Image
+                  src='images/watch-01.jpeg'
+                  alt='famous'
+                  className='rounded-5'
+                />
+              </div>
+            </div>
+
+            <div className='col-3'>
+              <div className='famous-card rounded-5'>
+                <div className='famous-content '>
+                  <Text as='h5'>Home Speakers</Text>
+                  <Text as='h6'>Room Filling Sound</Text>
+                  <Text as='p'>From $499 or $12.62/month for 6 months *</Text>
+                </div>
+                <Image
+                  src='images/watch-01.jpeg'
+                  alt='famous'
+                  className='rounded-5'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className='special-wrapper home-wrapper-secondary py-5'>
         <div className='container-xxl'>
           <div className='row'>
@@ -259,6 +325,24 @@ const Home = () => {
             <SpecialProductCard />
             <SpecialProductCard />
             <SpecialProductCard />
+          </div>
+        </div>
+      </section>
+
+      <section className='popular-wrapper home-wrapper-secondary py-5 '>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12'>
+              <Text as='h3' className='section-heading'>
+                Our Popular Products
+              </Text>
+            </div>
+            <div className='row'>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+            </div>
           </div>
         </div>
       </section>

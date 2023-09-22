@@ -124,3 +124,44 @@
   font-weight: 500;
   margin-bottom: 30px;
 }
+
+.famous-card {
+  background-color: white;
+  box-shadow: 0 0 10px #0000001a;
+  transition: box-shadow 0.3s ease;
+  display: flex; /* Kart içeriğini yatay olarak hizalar */
+  flex-direction: column; /* Kart içeriğini dikey olarak hizalar */
+  justify-content: space-between; /* İçerik üstten ve alttan hizalanır */
+  min-height: 300px; /* Tüm kartlar en az 300 piksel yüksekliğinde olacak */
+}
+
+.famous-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.famous-content {
+  margin-left: 20px;
+  padding-top: 15px;
+}
+
+.famous-content h5 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  color: rgb(117, 112, 112);
+  margin-bottom: 7px;
+}
+
+.famous-content h6 {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 500;
+  color: black;
+}
+
+.famous-content p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 100;
+  color: black;
+}
