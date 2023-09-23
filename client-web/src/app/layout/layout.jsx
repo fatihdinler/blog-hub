@@ -13,7 +13,7 @@ const Layout = () => {
             routes.map((route, index) => {
               return (
                 <Route
-                  key={index}
+                  key={route.key}
                   path={route.path}
                   element={route.component}
                 />

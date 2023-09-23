@@ -1,11 +1,12 @@
 import React from 'react'
 import { Image, Text, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { FastMarquee, BlogCard, ProductCard, SpecialProductCard } from '../../components'
+import { FastMarquee, BlogCard, ProductCard, SpecialProductCard, Helmet } from '../../components'
 
 const Home = () => {
   return (
     <div>
+      <Helmet title='DigiShop'/>
       <section className='home-wrapper-primary py-5'>
         <div className='container-xxl'>
           <div className='row'>

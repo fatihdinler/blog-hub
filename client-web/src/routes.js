@@ -1,13 +1,15 @@
 import { 
   Home,
   About,
-  Contact
+  Contact,
+  Store
 } from './app'
 
 const routes = [
-  { path: '/', component: <Home /> },
-  { path: '/about', component: <About /> },
-  { path: '/contact', component: <Contact /> },
+  { key: 'home', path: '/', component: <Home /> },
+  { key: 'about', path: '/about', component: <About /> },
+  { key: 'contact', path: '/contact', component: <Contact /> },
+  { key: 'store', path: '/store', component: <Store /> },
 ]
 
 export default routes
