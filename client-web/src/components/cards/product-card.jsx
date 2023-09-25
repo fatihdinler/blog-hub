@@ -3,7 +3,7 @@ import { Image, Text, Button } from '@chakra-ui/react'
 import ReactStars from 'react-rating-stars-component'
 import { Link, useLocation } from 'react-router-dom'
 
-const ProductCard = ({grid}) => {
+const ProductCard = ({ grid }) => {
 
   const location = useLocation()
   console.log(location)
@@ -19,7 +19,7 @@ const ProductCard = ({grid}) => {
         </div>
 
         <div className='product-image'>
-        <Image
+          <Image
             src='images/watch.jpeg'
             alt='product'
             className='img-fluid'
@@ -45,6 +45,11 @@ const ProductCard = ({grid}) => {
             edit={false}
             activeColor='teal'
           />
+          <Text as='p' className={`product-description ${grid === 12 ? 'd-block' : 'd-none'}`}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Cum maxime mollitia magnam, excepturi nobis tempora officiis autem fuga, minima unde magni,
+            incidunt suscipit et placeat corporis adipisci quasi quidem in?
+          </Text>
           <Text as='p' className='product-price'>
             $100
           </Text>
