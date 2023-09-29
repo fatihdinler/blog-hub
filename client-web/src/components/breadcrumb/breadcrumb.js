@@ -26,13 +26,3 @@ const BreadCrumb = ({ items }) => {
 }
 
 export default BreadCrumb
-
-/**
- * Example Usage: 
- * <Breadcrumb
-      items={[
-        { content: 'Home', link: '/', isActive: false},
-        { content: 'Store', link: '/store', isActive: true },
-      ]}
-    />
- */

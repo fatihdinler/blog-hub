@@ -74,7 +74,9 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className='d-flex align-items-center gap-10'>
+                  <Link
+                    to='/wishlist'
+                    className='d-flex align-items-center gap-10'>
                     <Image src='images/wishlist.svg' alt='wishlist' />
                     <Text className='text-white mb-0' fontSize='small'>
                       Favourite

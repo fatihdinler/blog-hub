@@ -4,7 +4,8 @@ import {
   Contact,
   Store,
   Blog,
-  CompareProduct
+  CompareProduct,
+  Wishlist,
 } from './app'
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
   { key: 'store', path: '/store', component: <Store /> },
   { key: 'blog', path: '/blog', component: <Blog /> },
   { key: 'compare-product', path: '/compare-product', component: <CompareProduct /> },
+  { key: 'wishlist', path: '/wishlist', component: <Wishlist /> },
 ]
 
 export default routes
