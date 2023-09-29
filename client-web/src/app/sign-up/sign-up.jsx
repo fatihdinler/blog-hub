@@ -86,7 +86,7 @@ const SignUp = () => {
                     <Button
                       colorScheme='teal'
                       variant='solid'
-                      className='w-100'>
+                      className='w-100 mb-2'>
                       Sign Up
                     </Button>
                   </div>

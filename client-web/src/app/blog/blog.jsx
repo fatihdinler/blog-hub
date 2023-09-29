@@ -12,6 +12,7 @@ const Blog = () => {
           { content: 'Blog', link: '/blog', isActive: true },
         ]}
       />
+      
       <div className='blog-wrapper home-wrapper-secondary py-5'>
         <div className='container-xxl'>
           <div className='row'>

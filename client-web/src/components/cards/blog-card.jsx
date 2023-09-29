@@ -23,7 +23,7 @@ const BlogCard = () => {
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </Text>
 
-        <Link to=''>
+        <Link to='/blog/:id'>
           <Button colorScheme='teal' variant='outline'>
             Read More
           </Button>

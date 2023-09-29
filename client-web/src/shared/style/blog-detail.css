@@ -1,0 +1,31 @@
+.single-blog-card {
+  padding: 30px 20px;
+  background-color: white;
+  gap: 15px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.single-blog-card h3{
+  font-size: 24px;
+  font-weight: 600;
+  color: #1c1c1b;
+}
+
+.single-blog-card p {
+  font-size: 14px;
+  color: #484848;
+}
+
+.single-blog-card a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.single-blog-card .link-text {
+  font-size: 15px;
+  color: #1c1c1b;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}

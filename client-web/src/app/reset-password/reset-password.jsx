@@ -3,11 +3,11 @@ import { Helmet, Breadcrumb } from '../../components'
 import { Text, FormControl, FormLabel, Input, FormHelperText, Textarea, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-const ForgotPassword = () => {
+const ResetPassword = () => {
+
   const [form, setForm] = useState({
-    email: '',
-    password: '',
-    comment: '',
+    password:'',
+    confirmPasswordassword: '',
   })
 
   const handleInputChange = (event) => {
@@ -20,28 +20,39 @@ const ForgotPassword = () => {
 
   return (
     <div>
-      <Helmet title='Forgot Password' />
+      <Helmet title='Reset Password' />
       <Breadcrumb
         items={[
           { content: 'Home', link: '/', isActive: false },
-          { content: 'Forgot Password', link: '/forgot-password', isActive: true },
+          { content: 'Reset Password', link: '/reset-password', isActive: true },
         ]}
       />
 
-      <div className='forgot-password-wrapper home-wrapper-secondary py-5'>
+      <div className='sign-in-wrapper home-wrapper-secondary py-5'>
         <div className='container-xxl'>
           <div className='row'>
             <div className='col-12 d-flex justify-content-center'>
-              <div className='forgot-password-card rounded-5'>
-                <Text as='h4'>Reset Your Password</Text>
-                <Text as='p'>We'll send you an e-mail to reset your password. It'll only valid for 10 minutes.</Text>
+              <div className='sign-in-card rounded-5'>
+                <Text as='h4'>Sign Up</Text>
                 <FormControl isRequired className='form-controller'>
                   <div>
-                    <FormLabel>E-mail</FormLabel>
+                    <FormLabel>Password</FormLabel>
                     <Input
-                      name='email'
-                      placeholder='johndoe@mail.com'
-                      value={form.email}
+                      name='password'
+                      type='password'
+                      placeholder='*****'
+                      value={form.password}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+
+                  <div>
+                    <FormLabel>Confirm Password</FormLabel>
+                    <Input
+                      name='confirmPassword'
+                      type='password'
+                      placeholder='*****'
+                      value={form.confirmPasswordassword}
                       onChange={handleInputChange}
                     />
                   </div>
@@ -51,12 +62,12 @@ const ForgotPassword = () => {
                       colorScheme='teal'
                       variant='solid'
                       className='w-100 mb-2'>
-                      Send Link
+                      Reset Password
                     </Button>
                   </div>
                 </FormControl>
               </div>
-
+            
             </div>
           </div>
         </div>
@@ -65,4 +76,4 @@ const ForgotPassword = () => {
   )
 }
 
-export default ForgotPassword
+export default ResetPassword
