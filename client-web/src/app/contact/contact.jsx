@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Helmet, Breadcrumb } from '../../components'
-import { Text, FormControl, FormLabel, Input, FormHelperText, Textarea, Button, Image } from '@chakra-ui/react'
+import { Text, FormControl, FormLabel, Input, FormHelperText, Textarea, Button } from '@chakra-ui/react'
 import { HomeIcon, MailIcon, PhoneIcon, InformationIcon } from '../../components/icons/icons'
 const Contact = () => {
   const [form, setForm] = useState({

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Helmet, Breadcrumb, WishlistProductCard } from '../../components'
-import { Image, Text } from '@chakra-ui/react'
 
 const Wishlist = () => {
   return (

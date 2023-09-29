@@ -86,7 +86,9 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className='d-flex align-items-center gap-10'>
+                  <Link 
+                    to='/sign-in'
+                    className='d-flex align-items-center gap-10'>
                     <Image src='images/user.svg' alt='user' />
                     <Text className='text-white mb-0' fontSize='small'>
                       Login

@@ -1,0 +1,11 @@
+.sign-in-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.sign-in-card {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px #0000001a;
+  width: 60%;
+}
