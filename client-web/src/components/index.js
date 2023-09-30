@@ -9,3 +9,4 @@ export { default as Helmet } from './helmet/helmet'
 export { default as Color } from './color/color'
 export { default as CompareProductCard } from './cards/compare-product-card'
 export { default as WishlistProductCard } from './cards/wishlist-product-card'
+ 

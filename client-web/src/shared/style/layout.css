@@ -61,6 +61,7 @@ a {
 @import url(product-card.css);
 @import url(special-product-card.css);
 @import url(store.css);
+@import url(store-detail.css);
 @import url(breadcrumb.css);
 @import url(blog.css);
 @import url(contact.css);
@@ -69,3 +70,4 @@ a {
 @import url(sign-in.css);
 @import url(forgot-password.css);
 @import url(blog-detail.css);
+@import url(policy.css);

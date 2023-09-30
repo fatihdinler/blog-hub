@@ -73,28 +73,28 @@ const Footer = () => {
                 <Text as='h4' className='mb-4'>Information</Text>
                 <div className='footer-links'>
                   <List className='footer-links-list'>
-                    <Link>
+                    <Link to='/privacy-policy'>
                       <ListItem>
                         <ListIcon as={PrivacyIcon} />
                         Privacy Policy
                       </ListItem>
                     </Link>
 
-                    <Link>
+                    <Link to='/refund-policy'>
                       <ListItem>
                         <ListIcon as={RefundIcon} />
                         Refund Policy
                       </ListItem>
                     </Link>
 
-                    <Link>
+                    <Link to='/shipping-policy'>
                       <ListItem>
                         <ListIcon as={ShippingIcon} />
                         Shipping Policy
                       </ListItem>
                     </Link>
 
-                    <Link>
+                    <Link to='/terms-condition-policy'>
                       <ListItem>
                         <ListIcon as={DataUsageIcon} />
                         Terms & Conditions
