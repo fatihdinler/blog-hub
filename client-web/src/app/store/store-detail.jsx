@@ -1,6 +1,18 @@
 import React, { useState } from 'react'
 import { Helmet, Breadcrumb, ProductCard, Color } from '../../components'
-import { Text, FormControl, FormLabel, Input, FormHelperText, Textarea, Button, Image, Badge, Tag } from '@chakra-ui/react'
+import {
+  Text, FormControl, FormLabel, Input, FormHelperText, Textarea, Button, Image, Badge, Tag, NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from '@chakra-ui/react'
 import ReactStars from 'react-rating-stars-component'
 
 
@@ -36,7 +48,7 @@ const StoreDetail = () => {
         <div className='container-xxl'>
           <div className='row'>
             <div className='section-card rounded-5 d-flex flex-row '>
-              <div className='col-6'>
+              <div className='col-6 align-self-center'>
                 <div className='main-product-image'>
                   <div>
                     <Image
@@ -109,9 +121,98 @@ const StoreDetail = () => {
 
                 <div className='product-detail'>
                   <Text as='h5' className='mb-0'>Color: </Text>
-                  <Color 
+                  <Color
                     colors={['red', 'purple', 'blue']}
                   />
+                </div>
+
+                <div className='product-detail'>
+                  <Text as='h5' className='mb-0'>Quantitiy: </Text>
+                  <div>
+                    <NumberInput
+                      defaultValue={1}
+                      min={0}
+                      max={30}
+                      clampValueOnBlur={false}>
+                      <NumberInputField />
+                      <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                      </NumberInputStepper>
+                    </NumberInput>
+                  </div>
+                </div>
+
+                <div className='product-detail'>
+                  <Button colorScheme='teal' variant='solid'>
+                    Add to Cart
+                  </Button>
+                  <Button colorScheme='teal' variant='outline'>
+                    Buy It Now
+                  </Button>
+                </div>
+
+                <div className='product-detail mt-5'>
+                  <Accordion allowToggle flex='1'>
+                    <AccordionItem>
+                      <h2>
+                        <AccordionButton _expanded={{ bg: 'teal', color: 'white' }}>
+                          <Box as="span" flex='1' textAlign='left'>
+                            Shipping & Returns
+                          </Box>
+                          <AccordionIcon />
+                        </AccordionButton>
+                      </h2>
+                      <AccordionPanel>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </AccordionPanel>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+
+                <div className='product-detail'>
+                  <Accordion allowToggle flex='1'>
+                    <AccordionItem>
+                      <h2>
+                        <AccordionButton _expanded={{ bg: 'teal', color: 'white' }}>
+                          <Box as="span" flex='1' textAlign='left'>
+                            Materials
+                          </Box>
+                          <AccordionIcon />
+                        </AccordionButton>
+                      </h2>
+                      <AccordionPanel>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </AccordionPanel>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+
+                <div className='product-detail'>
+                  <Accordion allowToggle flex='1'>
+                    <AccordionItem>
+                      <h2>
+                        <AccordionButton _expanded={{ bg: 'teal', color: 'white' }}>
+                          <Box as="span" flex='1' textAlign='left'>
+                            Care Instructions
+                          </Box>
+                          <AccordionIcon />
+                        </AccordionButton>
+                      </h2>
+                      <AccordionPanel>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </AccordionPanel>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
 
               </div>
