@@ -50,6 +50,26 @@ client-web-v2/yarn-debug.log*
 client-web-v2/yarn-error.log*
 client-web-v2/dist
 
+# admin
+admin/node_modules
+admin/package-lock.json
+admin/yarn.lock
+admin/.env
+admin/node_modules
+admin/.pnp
+admin/.pnp.js
+admin/coverage
+admin/build
+admin/.DS_Store
+admin/.env.local
+admin/.env.development.local
+admin/.env.test.local
+admin/.env.production.local
+admin/npm-debug.log*
+admin/yarn-debug.log*
+admin/yarn-error.log*
+admin/dist
+
 # server
 server/node_modules
 server/yarn.lock
