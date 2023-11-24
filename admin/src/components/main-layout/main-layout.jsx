@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
 } from '@ant-design/icons'
 import { HiOutlineDesktopComputer, HiOutlineShoppingCart, HiUser } from 'react-icons/hi'
 import { TbBrand4Chan } from 'react-icons/tb'
@@ -14,18 +11,18 @@ import { LiaBlogSolid } from 'react-icons/lia'
 import { MdProductionQuantityLimits, MdOutlineCategory } from 'react-icons/md'
 import { ImBlog } from 'react-icons/im'
 import { SiRoamresearch } from 'react-icons/si'
-import { FaShopify } from 'react-icons/fa'
 import { Layout, Menu, Button, theme } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 const { Header, Sider, Content } = Layout
 
 const MainLayout = () => {
+  const navigate = useNavigate()
+  
   const [collapsed, setCollapsed] = useState(false)
   const {
     token: { colorBgContainer },
   } = theme.useToken()
-
-  const navigate = useNavigate()
 
   return (
     <Layout>
@@ -37,8 +34,8 @@ const MainLayout = () => {
           </h2>
         </div>
         <Menu
-          theme="dark"
-          mode="inline"
+          theme='dark'
+          mode='inline'
           defaultSelectedKeys={['1']}
           onClick={({ key }) => {
             if (key === 'signout') {
@@ -146,17 +143,36 @@ const MainLayout = () => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
+        <Header style={{ padding: 0, background: colorBgContainer }} className='d-flex justify-content-between'>
           <Button
-            type="text"
+            type='text'
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
             style={{
               fontSize: '16px',
               width: 64,
               height: 64,
+              alignSelf: 'center'
             }}
           />
+          <div className='d-flex gap-3 align-items-center'>
+            <div></div>
+            <div className='d-flex gap-3 align-items-center mx-4'>
+              <div>
+                <img
+                  width={32}
+                  height={32}
+                  className='person-logo mb-0' 
+                  src='https://www.mnp.ca/-/media/foundation/integrations/personnel/2020/12/16/13/57/personnel-image-4483.jpg?h=800&w=600&hash=9D5E5FCBEE00EB562DCD8AC8FDA8433D'
+                  alt=''
+                />
+              </div>
+              <div>
+                <h5 className='mb-0'>Fatih Dinler.</h5>
+                <p className='mb-0'>fatihdinler458@gmail.com</p>
+              </div>
+            </div>
+          </div>
         </Header>
         <Content
           style={{
@@ -166,7 +182,7 @@ const MainLayout = () => {
             background: colorBgContainer,
           }}
         >
-          Content
+          <Outlet />
         </Content>
       </Layout>
     </Layout>

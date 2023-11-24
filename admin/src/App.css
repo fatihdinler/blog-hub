@@ -59,4 +59,9 @@ main {
   display: none;
 }
 
+.ant-menu-title-content {
+  font-size: 16px;
+}
+
 @import url(./shared/style/pages/login.css);
+@import url(./shared/style/components/main-layout.css);
