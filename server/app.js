@@ -1,34 +1,20 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require('express')
 const dotenv = require('dotenv').config()
+const errorHandler = require('./src/middlewares/error.middleware')
+const connectDb = require('./src/utils/db')
+const userRoutes = require('./src/routes/user.route')
 
-const app = express();
-app.use(express.json());
+connectDb()
+const app = express()
+app.use(express.json())
 
-app.post('/createdb', async (req, res) => {
-  const { dbName } = req.body;
+const PORT = process.env.PORT || 4001
+const baseApiUrl = `/api/v1`
 
-  try {
-    // Yeni bir MongoDB bağlantısı oluşturulur
-    const newConnection = mongoose.createConnection(`mongodb://localhost:27017/${dbName}`, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+app.use(`${baseApiUrl}/users`, userRoutes)
 
-    // Bu bağlantı üzerinden yeni bir şema ve model oluşturulabilir
-    const NewModel = newConnection.model('NewModel', new mongoose.Schema({}));
+app.use(errorHandler)
 
-    // İsteğe özel bir veri eklenmesi (Opsiyonel)
-    const newData = new NewModel({ exampleField: 'exampleValue' });
-    await newData.save();
-
-    res.status(200).json({ message: `Veritabanı oluşturuldu: ${dbName}` });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-});
+  console.log(`>>> server app is running on http://localhost:${PORT}`) // Değişiklik yapıldı
+})
