@@ -12,5 +12,5 @@ app.get('/hello', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`>>> server app is running on http://localhost:${PORT}}`) // Değişiklik yapıldı
+  console.log(`>>> server app is running on http://localhost:${PORT}}`)
 })
