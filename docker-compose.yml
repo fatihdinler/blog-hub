@@ -4,7 +4,7 @@ services:
   planify-server:
     build: ./server
     ports:
-      - "5000:5001"
+      - "10000:3000"
     depends_on:
       - mongo-db
     volumes:
@@ -20,7 +20,7 @@ services:
   planify-web:
     build: ./client-web
     ports:
-      - "4000:4001"
+      - "11000:3000"
     volumes:
       - ./client-web:/usr/src/app
 
