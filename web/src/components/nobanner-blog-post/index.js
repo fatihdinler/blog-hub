@@ -1,0 +1,1 @@
+export { default as NobannerBlogPost } from './nobanner-blog-post.component'

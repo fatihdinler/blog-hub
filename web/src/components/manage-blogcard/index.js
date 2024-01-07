@@ -1,0 +1,1 @@
+export { default as ManageBlogcard } from './manage-blogcard.component'

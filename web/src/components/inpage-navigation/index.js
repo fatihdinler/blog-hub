@@ -1,0 +1,1 @@
+export { default as InpageNavigation } from './inpage-navigation.component'

@@ -1,35 +1,43 @@
 version: '3'
-
 services:
-  planify-server:
-    build: ./server
-    ports:
-      - "10000:3000"
-    depends_on:
-      - mongo-db
-    volumes:
-      - ./server:/usr/src/app
-
-  mongo-db:
+  db:
     image: mongo:latest
+    container_name: blog-hub-db
+    restart: always
     ports:
       - "27017:27017"
     volumes:
-      - mongodb-data:/data/db
+      - mongodb_data:/data/db
+    networks:
+      - app-network
 
-  planify-web:
-    build: ./client-web
+  server:
+    build: ./server
+    container_name: blog-hub-server
     ports:
-      - "11000:3000"
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      MONGODB_URI: mongodb://db:27017/blog-hub
     volumes:
-      - ./client-web:/usr/src/app
+      - ./server:/usr/src/app
+    networks:
+      - app-network
+    expose:
+      - "3030"
 
-  # planify-mobile:
-  #   build: ./client-mobile
-  #   ports:
-  #     - "19000:19000"
-  #     - "19001:19001"
-  #     - "19002:19002"
+  web:
+    build: ./web
+    container_name: blog-hub-web
+    ports:
+      - "4000:3000"  # React uygulamasının kullanacağı port
+    volumes:
+      - ./web:/usr/src/app  # React uygulamasını Docker içine monte etme
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
-  mongodb-data:
+  mongodb_data:

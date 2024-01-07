@@ -1,0 +1,1 @@
+export { default as PublishForm } from './publish-form.component'

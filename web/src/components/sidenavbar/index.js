@@ -1,0 +1,1 @@
+export { default as Sidenavbar } from './sidenavbar.component'

@@ -1,0 +1,1 @@
+export { default as Tools } from './tools.component'

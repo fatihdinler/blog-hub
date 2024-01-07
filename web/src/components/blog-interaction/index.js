@@ -1,0 +1,1 @@
+export { default as BlogInteraction } from './blog-interaction.component'

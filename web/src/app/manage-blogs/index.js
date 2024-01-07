@@ -1,0 +1,1 @@
+export { default as ManageBlogs } from './manage-blogs.page'
